@@ -8,11 +8,11 @@ import { usePathname } from "next/navigation";
 export default function Sidebar() {
   const pathname = usePathname();
   return (
-    <section className="bg-dark-1 sticky left-0 flex h-screen w-fit flex-col justify-between p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
+    <aside className="bg-dark-1 sticky left-0 flex h-screen w-fit flex-col justify-between p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
       <div className="flex flex-col gap-6">
         {sidebarLinks.map((link) => {
           const isActive =
-            pathname === link.route || pathname.startsWith(link.route);
+            pathname === link.route || pathname.startsWith(`${link.route}/`);
           return (
             <Link
               key={link.route}
@@ -38,6 +38,6 @@ export default function Sidebar() {
           );
         })}
       </div>
-    </section>
+    </aside>
   );
 }
