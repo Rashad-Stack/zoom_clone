@@ -1,3 +1,4 @@
+import { SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
@@ -19,7 +20,10 @@ export default function Navbar() {
       </Link>
 
       <div className="flex-between flex gap-5">
-        {/* Clark - User Management */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+
         <MobileNav />
       </div>
     </nav>
