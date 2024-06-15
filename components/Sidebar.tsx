@@ -1,6 +1,7 @@
 "use client";
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -23,7 +24,16 @@ export default function Sidebar() {
                 },
               )}
             >
-              {link.label}
+              <Image
+                src={link.imgUrl}
+                width={24}
+                height={24}
+                alt={link.label}
+              />
+
+              <p className="text-lg font-semibold max-lg:hidden">
+                {link.label}
+              </p>
             </Link>
           );
         })}
