@@ -20,7 +20,7 @@ export default function Sidebar() {
               className={cn(
                 "flex items-center justify-start gap-4 rounded-lg p-4",
                 {
-                  "bg-blue-100": isActive,
+                  "bg-blue-1": isActive,
                 },
               )}
             >
