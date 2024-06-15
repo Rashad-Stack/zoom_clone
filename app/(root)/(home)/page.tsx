@@ -1,3 +1,5 @@
+import MeetingTypeList from "@/components/MeetingTypeList";
+
 export default function Home() {
   const now = new Date();
   const time = now.toLocaleTimeString("en-US", {
@@ -21,6 +23,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <MeetingTypeList />
     </section>
   );
 }
