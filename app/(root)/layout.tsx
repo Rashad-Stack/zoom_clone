@@ -5,11 +5,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main>
-      navbar
-      {children}
-      footer
-    </main>
-  );
+  return <main>{children}</main>;
 }
