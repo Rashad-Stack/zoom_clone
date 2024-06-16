@@ -1,4 +1,5 @@
 "use client";
+import { useToast } from "@/components/ui/use-toast";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
@@ -21,11 +22,18 @@ export default function MeetingTypeList() {
     link: "",
   });
   const [callDetails, setCallDetails] = useState<Call>();
+  const { toast } = useToast();
 
   const createMeeting = async () => {
     if (!user || !client) return;
 
     try {
+      if (!values.dateTime) {
+        toast({
+          title: "Please select a date and time",
+        });
+      }
+
       const id = crypto.randomUUID();
       const call = client.call("default", id);
 
@@ -49,8 +57,14 @@ export default function MeetingTypeList() {
       if (!values.description) {
         router.push(`/meeting/${call.id}`);
       }
+      toast({
+        title: "Meeting Created",
+      });
     } catch (error) {
       console.log(error);
+      toast({
+        title: "Failed to create meeting",
+      });
     }
   };
 
