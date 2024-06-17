@@ -8,15 +8,18 @@ import {
 import { cn } from "@/lib/utils";
 import {
   CallControls,
+  CallingState,
   CallParticipantsList,
   CallStatsButton,
   PaginatedGridLayout,
   SpeakerLayout,
+  useCallStateHooks,
 } from "@stream-io/video-react-sdk";
 import { LayoutList, User } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import EndCallButton from "./EndCallButton";
+import Loader from "./Loader";
 
 export default function MeetingRoom() {
   const searchParams = useSearchParams();
@@ -24,6 +27,11 @@ export default function MeetingRoom() {
 
   const [layout, setLayout] = useState("speaker-left");
   const [showParticipant, setShowParticipant] = useState(false);
+
+  const { useCallCallingState } = useCallStateHooks();
+  const callingState = useCallCallingState();
+
+  if (callingState !== CallingState.JOINED) return <Loader />;
 
   const CallLayout = () => {
     switch (layout) {
@@ -52,7 +60,7 @@ export default function MeetingRoom() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
+      <div className="fixed bottom-0 flex w-full flex-wrap items-center justify-center gap-5">
         <CallControls />
 
         <DropdownMenu>
