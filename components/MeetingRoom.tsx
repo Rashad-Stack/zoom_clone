@@ -14,9 +14,14 @@ import {
   SpeakerLayout,
 } from "@stream-io/video-react-sdk";
 import { LayoutList, User } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import EndCallButton from "./EndCallButton";
 
 export default function MeetingRoom() {
+  const searchParams = useSearchParams();
+  const isPersonalRoom = !!searchParams.get("personal");
+
   const [layout, setLayout] = useState("speaker-left");
   const [showParticipant, setShowParticipant] = useState(false);
 
@@ -80,6 +85,8 @@ export default function MeetingRoom() {
             <User size={20} className="text-white" />
           </div>
         </button>
+
+        {!isPersonalRoom && <EndCallButton />}
       </div>
     </section>
   );
