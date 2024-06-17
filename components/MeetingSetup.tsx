@@ -35,10 +35,11 @@ export default function MeetingSetup({
 
       <div className="flex h-16 items-center justify-center gap-3">
         <label
-          htmlFor=""
+          htmlFor="join-with-mic-cam-off"
           className="flex items-center justify-center gap-2 font-medium"
         >
           <input
+            id="join-with-mic-cam-off"
             type="checkbox"
             checked={isMicCamToggledOn}
             onChange={(e) => setIsMicCamToggledOn(e.target.checked)}
