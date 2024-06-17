@@ -1,6 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Yoom",
+  description: "Yoom is a video conferencing app",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
+};
 
 export default function HomeLayout({
   children,
