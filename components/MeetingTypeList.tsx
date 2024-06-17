@@ -7,6 +7,7 @@ import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import HomeCard from "./HomeCard";
 import MeetingModal from "./MeetingModal";
+import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
 export default function MeetingTypeList() {
@@ -172,6 +173,21 @@ export default function MeetingTypeList() {
         buttonText="Start Meeting"
         handleClick={createMeeting}
       />
+
+      <MeetingModal
+        isOpen={meetingState === "isJoiningMeeting"}
+        onClose={() => setMeetingState(undefined)}
+        title="Join a Meeting"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          className="bg-dark-3 border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
+        />
+      </MeetingModal>
     </section>
   );
 }
