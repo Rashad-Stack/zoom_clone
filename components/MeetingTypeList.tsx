@@ -97,7 +97,7 @@ export default function MeetingTypeList() {
         className="bg-purple-1"
       />
       <HomeCard
-        img="/icons/Join-meeting.svg"
+        img="/icons/join-meeting.svg"
         title="Join Meeting"
         description="Via meeting ID or invitation link"
         handleClick={() => setMeetingState("isJoiningMeeting")}
