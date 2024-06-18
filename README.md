@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Zoom Clone Project
+
+This project is a Zoom clone built using modern web technologies including Next.js 14, Tailwind CSS, Shadcn, Stream library for audio/video calls, TypeScript, and React Date Picker.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Real-time audio and video calls
+- Schedule and join meetings
+- User authentication
+- Responsive design
+
+## Technologies Used
+
+- **Next.js 14**: React framework for server-rendered applications.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Shadcn**: UI component library.
+- **Stream Library**: For audio and video call functionalities.
+- **TypeScript**: JavaScript with static type definitions.
+- **React Date Picker**: For scheduling meetings.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (>= 14.x)
+- npm or yarn
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Clone the Repository**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    ```bash
+    git clone https://github.com/yourusername/zoom-clone.git
+    cd zoom-clone
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Install Dependencies**
 
-## Learn More
+    ```bash
+    # Using npm
+    npm install
 
-To learn more about Next.js, take a look at the following resources:
+    # Or using yarn
+    yarn install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set Up Environment Variables**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    Create a `.env.local` file in the root directory and add the necessary environment variables. Here is an example:
 
-## Deploy on Vercel
+    ```env
+    NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
+    NEXT_PUBLIC_STREAM_API_SECRET=your_stream_api_secret
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Start the Development Server**
+
+    ```bash
+    # Using npm
+    npm run dev
+
+    # Or using yarn
+    yarn dev
+    ```
+
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+
+- **Sign Up/Login**: Register a new account or log in with existing credentials.
+- **Schedule a Meeting**: Use the date picker to select a date and time for your meeting.
+- **Join a Meeting**: Enter the meeting ID to join an existing meeting.
+- **Audio/Video Call**: Utilize the Stream library for real-time communication.
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+Happy coding! If you have any questions, feel free to open an issue or contact the repository owner.
+
+
